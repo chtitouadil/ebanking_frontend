@@ -11,6 +11,18 @@ export class AccountsService {
 
   constructor(private http : HttpClient) { }
 
+  public saveAccount(accountDetails: AccountDetails):Observable<AccountDetails>{
+    return this.http.post<AccountDetails>(environment.backendHost+"/account",accountDetails);
+  }
+
+  public getListAccount():Observable<AccountDetails>{
+    return this.http.get<AccountDetails>(environment.backendHost+"/accounts");
+  }
+
+  public searchAccounts(id : any):Observable<Array<AccountDetails>>{
+    return this.http.get<Array<AccountDetails>>(environment.backendHost+"/accounts/search?id="+id)
+  }
+  
   public getAccount(accountId : string, page : number, size : number):Observable<AccountDetails>{
     return this.http.get<AccountDetails>(environment.backendHost+"/accounts/"+accountId+"/pageOperations?page="+page+"&size="+size);
   }

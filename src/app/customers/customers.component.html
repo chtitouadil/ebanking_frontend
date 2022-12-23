@@ -35,6 +35,11 @@
                 Accounts
               </button>
             </td>
+            <td>
+              <button (click)="handleBankAccounts(c)" class="btn btn-info">
+                Create Account
+              </button>
+            </td>
           </tr>
           </tbody>
         </table>
@@ -47,6 +52,7 @@
         {{errorMessage}}
       </div>
     </ng-container>
+    
     <ng-template #loading>
       Loading .....
     </ng-template>

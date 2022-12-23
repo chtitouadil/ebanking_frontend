@@ -1,6 +1,10 @@
 export interface AccountDetails {
   accountId:            string;
+  id:                   string;
   balance:              number;
+  rate:                 number;
+  accountType:          string;
+  idCustomer:           string;
   currentPage:          number;
   totalPages:           number;
   pageSize:             number;
